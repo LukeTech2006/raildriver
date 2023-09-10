@@ -30,11 +30,13 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-import Raildriver
+import Raildriver, logging
 
 def main():
-    rd = Raildriver.Raildriver()
-    rd.runRaildriver()
+  rd = Raildriver.Raildriver(logLevel = logging.DEBUG,
+                             dllPath = 'D:\\SteamLibrary\\steamapps\\common\\RailWorks\\plugins\\RailDriver64.dll',
+                             tcpPort = 22223)
+  rd.runRaildriver()
 
 if __name__ == "__main__": main()
 
